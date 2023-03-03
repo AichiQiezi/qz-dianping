@@ -1,0 +1,39 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: qzdp
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://152.136.198.137:3307/qzdp?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: root
+  redis:
+    cluster:
+      nodes:
+        - 192.168.150.101:7001
+        - 192.168.150.101:7002
+        - 192.168.150.101:7003
+        - 192.168.150.101:8001
+        - 192.168.150.101:8002
+        - 192.168.150.101:8003
+    password: aishuishui
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: non_null
+mybatis-plus:
+  type-aliases-package: com.qzdp.entity
+logging:
+  level:
+    com.qzdp: debug
+
+hm:
+  thread:
+    coreSize: 20
+    maxSize: 200
+    keepAliveTime: 10
