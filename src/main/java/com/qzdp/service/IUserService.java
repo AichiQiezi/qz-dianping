@@ -30,4 +30,8 @@ public interface IUserService extends IService<User> {
      * @return 返回检验结果
      */
     Result login(LoginFormDTO loginForm, HttpSession session);
+
+    Result sign();
+
+    Result signCount();
 }
